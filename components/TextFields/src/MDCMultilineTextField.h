@@ -94,4 +94,6 @@ __deprecated_msg(
     MDCMultilineTextField *_Nonnull textField, UITraitCollection *_Nullable previousTraitCollection)
     ;
 
+- (instancetype)initWithTextView:(MDCIntrinsicHeightTextView *)textView;
+
 @end

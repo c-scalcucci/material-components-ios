@@ -67,6 +67,22 @@ static NSString *const kBundle = @"MaterialTextFields.bundle";
 @synthesize mdc_elevationDidChangeBlock = _mdc_elevationDidChangeBlock;
 @synthesize mdc_overrideBaseElevation = _mdc_overrideBaseElevation;
 
+- (instancetype)initWithTextView:(MDCIntrinsicHeightTextView *)textView {
+    self = [super initWithFrame: CGRectZero];
+
+    if (self) {
+        _textView = textView;
+        [self setupTextView];
+
+        _fundament = [[MDCTextInputCommonFundament alloc] initWithTextInput:self];
+
+        [self commonMDCMultilineTextFieldInitialization];
+    }
+
+    return self;
+}
+
+
 - (instancetype)initWithFrame:(CGRect)frame {
   self = [super initWithFrame:frame];
   if (self) {
