@@ -119,12 +119,14 @@ Pod::Spec.new do |mdc|
   mdc.subspec "AnimationTiming" do |component|
     component.public_header_files = "components/#{component.base_name}/src/*.h"
     component.source_files = [
+      "components/MinimumOS/src/MDCMinimumOS.h",
       "components/#{component.base_name}/src/*.{h,m}",
       "components/#{component.base_name}/src/private/*.{h,m}"
     ]
 
     component.test_spec 'UnitTests' do |unit_tests|
       unit_tests.source_files = [
+        "components/MinimumOS/src/MDCMinimumOS.h",
         "components/#{component.base_name}/tests/unit/*.{h,m,swift}",
         "components/#{component.base_name}/tests/unit/supplemental/*.{h,m,swift}"
       ]
